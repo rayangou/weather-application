@@ -1,0 +1,43 @@
+.table-striped tr:nth-of-type(odd) {
+    background-color: #71B1D3;
+}
+
+.table-striped tr:nth-of-type(even) {
+    background-color: #5A88A4;
+}
+
+.table-striped thead tr {
+    background-color: #5A88A4;
+}
+
+.delete-icon {
+    color: rgb(184, 133, 6);
+    background-color: white;
+}
+
+.delete-button {
+    background-color: white;
+}
+
+@media (max-width: 500px) {
+    .table-striped {
+        width: 100%;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .table-striped {
+        width: 100%;
+        font-size: 0.75rem;
+        margin-left: -0.75rem;
+    }
+    .table-striped thead tr th {
+        background-color: #5A88A4;
+        padding: 0.65rem;
+    }
+    img {
+        height: 35px !important;
+        width: 35px !important;
+    }
+}

@@ -1,0 +1,16 @@
+<select class="browser-default custom-select param-select" (change)="loadTabData($event.target.value)">
+    <option value="0" selected>Temperature</option>
+    <option value="1">Pressure</option>
+    <option value="2">Humidity</option>
+    <option value="3">Ozone</option>
+    <option value="4">Visibility</option>
+    <option value="5">Wind Speed</option>
+</select>
+<br/>
+<br/>
+<div>
+    <div style="display: block">
+        <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend" [chartType]="barChartType" [colors]="barChartColors" [plugins]="barChartPlugins">
+        </canvas>
+    </div>
+</div>

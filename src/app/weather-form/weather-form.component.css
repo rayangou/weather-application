@@ -1,0 +1,82 @@
+    body[style] {
+        width: 80%;
+        margin: auto;
+    }
+    
+    .weather-search {
+        text-align: center;
+        margin: 20px;
+    }
+    
+    .form-group.asterisk .field-label:after {
+        content: " *";
+        color: red;
+    }
+    
+    input.ng-invalid.ng-touched {
+        background-image: none;
+    }
+    
+    .searchbutton {
+        color: black;
+        background: white;
+        display: inline;
+        align-items: center;
+        margin: 12px 50px 12px 0px;
+        border: 1px solid black;
+    }
+    
+    .align-middle {
+        vertical-align: middle;
+    }
+    
+    @media screen and (max-width: 802px) {
+        body[style] {
+            width: 90% !important;
+            margin: auto;
+        }
+        .searchbutton {
+            color: black;
+            background: white;
+            display: inline;
+            align-items: center;
+            margin: 8px 20px 8px 0px;
+            border: 1px solid black;
+        }
+    }
+    
+    @media screen and (min-width: 768px) {
+        .pl-md-5,
+        .px-md-5 {
+            padding-left: 5rem !important;
+        }
+    }
+    
+    @media screen and (min-width: 992px) {
+        .pl-md-5,
+        .px-md-5 {
+            padding-left: 7rem !important;
+        }
+    }
+    
+    @media screen and (min-width: 1200px) {
+        .pl-md-5,
+        .px-md-5 {
+            padding-left: 9rem !important;
+        }
+    }
+    
+    @media screen and (max-width: 500px) {
+        body[style] {
+            width: 90% !important;
+            margin: auto;
+        }
+        .searchbutton {
+            color: black;
+            background: white;
+            display: inline;
+            align-items: center;
+            margin: 0px 25px 0px 0px;
+            border: 1px solid black;
+        }
+    }

@@ -1,0 +1,132 @@
+<br />
+<div style="color:white; background: #5A88A4;box-shadow: 4px 4px 2px grey;border-radius: 5px;border: 1px solid black;">
+    <h2 class="weather-search">Weather Search</h2>
+    <br />
+    <form [formGroup]="weatherForm" name="form" (ngSubmit)="onSubmit()" class="container" #formData="ngForm" autocomplete="off">
+        <div class="form-group asterisk row">
+            <div class="col-md-2 col-sm-2"></div>
+            <label class="col-md-2 col-xs-2 col-sm-2 field-label control-label" for="street">Street</label>
+            <div class="col-md-6 col-sm-6">
+                <input class="form-control-sm" class="form-control" type="text" formControlName="street" name="street" [ngClass]="{'is-invalid': weatherForm.get('street').touched && weatherForm.get('street').invalid }" placeholder="Enter Street Name" style="border: 1px solid black;">
+                <div *ngIf="weatherForm.get('street').hasError('required')" class="invalid-feedback">
+                    Please enter a street.
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-2"></div>
+        </div>
+
+        <div class="form-group asterisk row">
+            <div class="col-md-2 col-sm-2"></div>
+            <label class="col-md-2 col-xs-2 col-sm-2 field-label control-label" for="city">City</label>
+            <div class="col-md-6 col-sm-6">
+                <input class="form-control-sm" class="form-control" type="text" matInput formControlName="city" name="city" [ngClass]="{'is-invalid': weatherForm.get('city').touched && weatherForm.get('city').invalid }" placeholder="Enter City Name" style="border: 1px solid black;"
+                    [matAutocomplete]="auto" autocomplete="off">
+                <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let c of cityNames" [value]="c.cityName">{{c.cityName}}</mat-option>
+                </mat-autocomplete>
+                <div *ngIf="weatherForm.get('city').hasError('required')" class="invalid-feedback">
+                    Please enter a city.
+                </div>
+            </div>
+
+            <div class="col-md-2 col-sm-2"></div>
+        </div>
+
+        <div class="form-group asterisk row">
+            <div class="col-md-2 col-sm-2"></div>
+            <label class="col-md-2 col-xs-2 col-sm-2 col-form-label field-label" for="state">State</label>
+            <div class="col-md-6 col-sm-6">
+                <select class="col-md-6 col-xs-6 form-control" id="stateselect" name="stateselect" formControlName="stateselect">
+                    <option value="" selected>Select State</option>
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District Of Columbia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row asterisk">
+            <div class="col-md-2 col-sm-2"></div>
+            <div class="col-md-6 col-sm-6">
+                <div class="form-check">
+                    <label><input type="checkbox" class="form-check-input" formControlName="location" name="location"
+                            value="cur-loc">Current Location</label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-md-12 col-sm-12 ml-md-5 pl-md-5 ml-sm-5 pl-sm-5 ml-lg-5 pl-lg-5">
+                <button type="submit" class="btn btn-default searchbutton" [disabled]="!weatherForm.valid"><i
+                        class="material-icons align-middle">search</i> Search</button>
+                <button type="reset" (click)="clear();" class="btn btn-default searchbutton"><i
+                        class="material-icons align-middle">clear_all</i> Clear</button>
+            </div>
+        </div>
+        <br />
+        <br />
+    </form>
+</div>
+<div style="height:25px;"></div>
+<ul class="nav nav-pills justify-content-center">
+    <li class="nav-item">
+        <a class="nav-link active" id="results" style="background-color: #5A88A4; color: white;border: 1px solid black;" (click)="switchToResults();">Results</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" id="favourites" style="color: black;border: 1px solid black;margin-left: 15px;" routerLink="/favourites" (click)="switchToFavourites();">Favourites</a>
+    </li>
+</ul>
+<br/>
+<div class="progress" *ngIf="showProgressBar" style="margin-top: 10px;">
+    <div class="progress-bar progress-bar-striped active" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<router-outlet></router-outlet>

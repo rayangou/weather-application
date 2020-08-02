@@ -1,0 +1,16 @@
+.param-select {
+    width: auto;
+}
+
+.chart-container {
+    width: auto;
+    min-height: 300px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 500px) {
+    .param-select {
+        width: 100%;
+        font-size: 0.8rem;
+    }
+}

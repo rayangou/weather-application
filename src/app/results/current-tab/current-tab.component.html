@@ -1,0 +1,60 @@
+<!-- Card -->
+<div class="row h-100 justify-content-center align-items-center" id="weathercard">
+    <div class="card weather-card">
+
+        <!-- Card content -->
+        <div class="card-body w-card-body">
+
+            <!-- Title -->
+            <h1 class="card-title">{{weatherData.city}}</h1>
+            <!-- Text -->
+            <h1 class="card-subtitle text-muted">{{weatherData.timezone}}</h1>
+
+            <div class="d-flex justify-content-between">
+                <div id="curr-card">
+
+                    <h1 class="card-title">{{ temperature }}<span><img style="vertical-align:top;"
+                                src="https://cdn3.iconfinder.com/data/icons/virtual-notebook/16/button_shape_oval-512.png" /></span> F</h1>
+
+                    <h4 class="card-title">{{ weatherData.summary }}</h4>
+                </div>
+                <i class="amber-text state-seal"><img class="img-fluid align-middle float-left" src="{{weatherData.stateSealLink}}" alt="State seal image"></i>
+            </div>
+
+
+            <ul class="list-unstyled d-flex justify-content-between font-small text-muted" id="weather-details">
+                <li *ngIf="weatherData.humidity != '0'">
+                    <div class="text-center"> <img src="https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-16-512.png" class="mt-4" placement="top" ngbTooltip="Humidity" />
+                        <p> {{ weatherData.humidity }} </p>
+                    </div>
+                </li>
+                <li *ngIf="weatherData.pressure != '0'">
+                    <div class="text-center"> <img src="https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-25-512.png" class="mt-4" placement="top" ngbTooltip="Pressure" />
+                        <p> {{ weatherData.pressure }} </p>
+                    </div>
+                </li>
+                <li *ngIf="weatherData.windSpeed != '0'">
+                    <div class="text-center"> <img src="https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-27-512.png" class="mt-4" placement="top" ngbTooltip="Wind Speed" />
+                        <p> {{ weatherData.windSpeed }} </p>
+                    </div>
+                </li>
+                <li *ngIf="weatherData.visibility != '0'">
+                    <div class="text-center"> <img src="https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-30-512.png" class="mt-4" placement="top" ngbTooltip="Visibility" />
+                        <p> {{ weatherData.visibility }} </p>
+                    </div>
+                </li>
+                <li *ngIf="weatherData.cloudCover != '0'">
+                    <div class="text-center"> <img src="https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-28-512.png" class="mt-4" placement="top" ngbTooltip="Cloud Cover" />
+                        <p> {{ weatherData.cloudCover }} </p>
+                    </div>
+                </li>
+                <li *ngIf="weatherData.ozone != '0'">
+                    <div class="text-center"> <img src="https://cdn2.iconfinder.com/data/icons/weather-74/24/weather-24-512.png" class="mt-4" placement="top" ngbTooltip="Ozone" />
+                        <p> {{ weatherData.ozone }} </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Card -->
+</div>

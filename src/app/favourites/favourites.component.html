@@ -1,0 +1,41 @@
+<div id="favourites" *ngIf="favouriteItems && favouriteItems.length > 0">
+    <div class="container table-responsive">
+        <div style="height: 40px;"></div>
+        <table class="table table-hover table-striped" *ngIf="favouriteItems && favouriteItems.length>0">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Image</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Favorites</th>
+                </tr>
+            </thead>
+
+            <tr *ngFor="let item of favouriteItems; let i = index">
+                <td>{{i+1}}</td>
+                <td *ngIf="item.stateSealLink">
+                    <img src={{item.stateSealLink}} alt="State Seal Link" height="50" width="50" />
+                </td>
+                <td>
+                    <div class="text-primary" style="cursor: pointer;">
+                        <div> <a placement="bottom" ngbTooltip="{{item?.city}}" (click)="getFavDetails(item.city+':'+item.state);">{{item?.city}}</a> </div>
+                    </div>
+                </td>
+                <td>{{item?.state}}</td>
+                <td>
+                    <button (click)="removeFromFavourites(item.city+':'+item.state);" class="btn btn-default delete-button">
+                        <i class="material-icons delete-icon" style="float:left;">delete</i>
+                    </button>
+				</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div *ngIf="(!favouriteItems || favouriteItems.length == 0)" id="noResult">
+    <div style="height: 20px;"></div>
+    <div class="alert alert-warning" role="alert">
+        No Records.
+    </div>
+</div>

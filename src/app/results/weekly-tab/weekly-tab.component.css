@@ -1,0 +1,53 @@
+.weather-modal {
+    background-color: #4A89AA;
+}
+
+.weather-modal-body {
+    background-color: #82CCF4;
+}
+
+h2 {
+    text-align: center;
+    font-weight: 800;
+    font-size: 2rem;
+}
+
+.i-class {
+    margin-right: 4rem;
+    padding-right: 2rem;
+}
+
+.chart-container {
+    width: auto;
+    min-height: 300px;
+    margin: 0 auto;
+}
+
+canvas[style] {
+    width: 100% !important;
+}
+
+@media screen and (max-width: 750px) {
+    h2 {
+        text-align: center;
+        font-weight: 800;
+        font-size: 1.75rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    h2 {
+        text-align: center;
+        font-weight: 800;
+        font-size: 1.5rem;
+    }
+    .i-class {
+        padding-right: 0rem;
+    }
+    table#modal-table tr td[style] {
+        width: 100% !important;
+    }
+    table#modal-table tr td:first-child[style] {
+        width: 0 !important;
+    }
+}

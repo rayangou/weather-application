@@ -1,0 +1,70 @@
+<div style="width: 100%; height: 400px;">
+    <div id="chartContainer" style="width: 100%; height: 400px;"></div>
+</div>
+
+<ng-template #template>
+    <div class="modal-header weather-modal">
+        <h4 class="modal-title pull-left modal-custom-title">{{selectedDate}}</h4>
+        <span class="modal-title pull-right modal-custom-title" (click)="modalRef.hide();modalDisplayed = false;">
+            <i class="material-icons align-middle close-button">
+                close
+            </i>
+        </span>
+    </div>
+    <div class="modal-body weather-modal-body">
+        <h1 class="pl-4"> {{weatherData.city}} </h1>
+        <div class="d-flex justify-content-between">
+            <div>
+                <h1 class="card-title pl-4">{{ temperature }}<span><img style="vertical-align:top; margin-top: 8px;"
+                            src="https://cdn3.iconfinder.com/data/icons/virtual-notebook/16/button_shape_oval-512.png"
+                            width="12" height="12" /></span> F</h1>
+            </div>
+            <i class="i-class"><img class="align-top float-left" src="{{selectedIcon}}" alt="Card image cap"
+                    width="75" height="75"></i>
+        </div>
+        <h4 class="card-title pl-4 ">{{ weatherItem.summary }}</h4>
+        <hr />
+
+        <table style="width: 100%" id="modal-table">
+            <tr>
+                <td style="width: 50%">
+                </td>
+                <td style="width: 50%">
+                    <div class="float-left">Precipitation: {{ weatherItem.precipIntensity }}</div>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 50%">
+
+                </td>
+                <td style="width: 50%">
+                    <div class="float-left">Chance of Rain: {{ weatherItem.precipProbability}} %</div>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 50%">
+
+                </td>
+                <td style="width: 50%">
+                    <div class="float-left">Wind Speed: {{ weatherItem.windSpeed }} mph</div>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 50%">
+
+                </td>
+                <td style="width: 50%">
+                    <div class="float-left">Humidity: {{ weatherItem.humidity }} %</div>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 50%">
+
+                </td>
+                <td style="width: 50%">
+                    <div class="float-left">Visibility: {{weatherItem.visibility}} miles</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</ng-template>

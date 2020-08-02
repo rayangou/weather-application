@@ -1,0 +1,49 @@
+#results-button {
+    position: relative;
+    margin-bottom: 70px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+    margin-bottom: -50px;
+}
+
+#tweet {
+    width: 38px;
+    height: 38px;
+}
+
+.tweet {
+    padding: 0;
+}
+
+.fav-class {
+    height: auto;
+    width: auto;
+}
+
+@media (max-width: 415px) {
+    .nav-tabs {
+        display: -webkit-inline-box;
+        display: -moz-box;
+        font-size: 3vw;
+        display: inline-flex;
+        width: 100%;
+    }
+    #tweet {
+        width: 28px;
+        height: 28px;
+    }
+    .fav-class {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+a {
+    color: black;
+}
